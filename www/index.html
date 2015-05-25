@@ -5,19 +5,32 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>mReporting</title>
-		<link rel="stylesheet" href="static/my.css" />
-		<link rel="stylesheet" href="static/themes/c.min.css" />
-		<link rel="stylesheet" href="static/themes/jquery.mobile.icons.min.css" />
-		<link rel="stylesheet" href="static/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css" />
+		
+		<link rel="stylesheet" href="static/c.min.css" />
+		<link rel="stylesheet" href="static/jquery.mobile.icons.min.css" />
+		<link rel="stylesheet" href="static/jquery.mobile-1.4.5.min.css" />
         
-		<script src="static/jquery/jquery-2.1.3.min.js">   </script>
-        <script src="static/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js">   </script>
+		<script src="static/jquery-2.1.3.min.js">   </script>
+        <script src="static/jquery.mobile-1.4.5.min.js">   </script>
 		<script src="static/survey.js"></script>		
     
 	
 
 	<style>
 	table.tbl_preview tr td { border:1px solid #5FAFAF; background-color:#EFF8F8;}
+	
+	.market {
+		font-size:16px;
+		color:#009191;
+		font-weight:600;
+   	 
+	}
+	.visit_client {
+		font-size:16px;
+		color:#009191;
+		font-weight:600;
+   	 
+	}
 	
 	</style>
 	</head>
@@ -28,9 +41,7 @@
 		<!-- =====================Home page=============== -->
 		<div data-theme="c" data-role="page" id="pageHome">
 			<div data-role="panel" id="routePanel" data-display="overlay" style="width:60%; background-color:#FFF">
-				<!-- panel content goes here unilogo1.jpg-->
 				<div align="center">
-                <!--<img style="width:100%" src="lafarge.png" alt="GP" />-->
                 <img src="cloud_menu_1.png">
                 <br>
 				</div>
@@ -45,18 +56,17 @@
                 </ul>
                 
 				<div style="margin:100%;"></div>
-				<!--<img src="lafarge.png" alt="Grameen Phone" />-->
 			</div><!-- /panel -->
 			
             <div data-theme="c" data-role="header" data-position="fixed" >			
 				<a  data-role="button" href="#routePanel" class="ui-btn-left ui-btn-icon-notext" onClick="clear_mgs()"><img src="menu.png"></a>
                 <a  data-role="button" onClick="exit();" class="ui-btn-right" style="padding:4px;"><img src="exit.png" style="height:25px; width:25px;"></a>
                 
-                <!--<a data-role="button" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-power ui-btn-icon-notext " onClick="exit();"><img src="exit.png"></a>-->
+               
                 <h3>mReporting</h3>
             </div>
             
-			<!--<img style="width:100%; height:50px"  src="images_2.jpg">-->
+			<!--<img style="width:100%;"  src="images_2.jpg">-->
             <div data-role="content">
 				
 				<div id="myerror" style="color:#C00;">		
@@ -93,7 +103,7 @@
                 <br><br><br><br><br><br><br><br><br><br>
                 
                 <br><br><br><br><br><br>
-                <div  style="color:#CCCCCC"    align="right">build201502251b</div>    
+                <div  style="color:#CCCCCC"    align="right">build20150504b</div>    
             </div>
 			
         <!-- ==========footer====== -->	
@@ -146,9 +156,7 @@
             <div data-theme="c" data-role="header" data-position="fixed">
 			<a  data-role="button" href="#pageHome" class="ui-btn-left ui-btn-icon-notext" onClick="clear_mgs()"><img src="menu.png"></a>
             <a data-role="button" data-rel="back"  data-iconpos="left" class="ui-btn-right"><img src="back.png"></a>
-                <h3>
-                  <div id="d_visit"> Outlet </div>
-                </h3>
+                <h3><div id="d_visit"> Chemist</div></h3>
             </div>
 			
             <div data-role="content" style="margin-top:0px; padding-top:0px;">            	
@@ -156,7 +164,8 @@
 				
 			
 				<div id="err_m_retailer_next" style="color:#C00"></div>
-				<div><span class="market" style="font-size:24px;color:#009191"></span></div>   
+				<!--<div><span class="market"></span></div>  -->
+                <div><span class="market" ></span></div>   
 
 				<br/>
                 
@@ -166,17 +175,16 @@
                 </ul>
                 
 				
-                <div align="center"><img id="wait_image_unschedule_market_ret" style="" width="50px;" src="loading.gif" alt=""></div>
+                <div align="center">
+                <img id="wait_image_ret" style="width:50px" src="loading.gif" alt="">
+               </div>
                 <br>
 				<br>
-
             </div><!--/cont-->
 			
 			<div data-theme="c" data-role="footer" data-position="fixed">
 			
 			</div>
-			
-			
 		 </div><!--/page-->
 			
 
@@ -200,10 +208,6 @@
 			  	 <select id="catCombo_profile" width="60%" data-native-menu="false">
                 <option value="" >Category</option>
                 </select>
-
-                
-                
-                
                 <br/><br/>
                 <input id="profile_market_cmb_id" data-type="search"  placeholder="Search"> 
 				
@@ -229,7 +233,7 @@
             <div data-theme="c" data-role="header" data-position="fixed">
 			<a  data-role="button" href="#pageHome" class="ui-btn-left ui-btn-icon-notext" onClick="clear_mgs()"><img src="menu.png"></a>
             <a data-role="button" data-rel="back" data-iconpos="left" class="ui-btn-right"><img src="back.png"></a>
-                <h3>Outlet</h3>
+                <h3>Chemist</h3>
             </div>
 			
             <div data-role="content" style="margin-top:0px; padding-top:0px;">            	
@@ -241,7 +245,7 @@
                 <table width="100%" style="background-color:#F2F2F2;">
                 	<tr>
                     <td style="text-align:left"><div align="left">Market :<span class="market"></span></div></td>
-                    <td style="text-align:right"><!--<div ><a  href="#"   onClick="marketNextCProfile_map();"><img id="wait_image_profile_market"  src="map_button.png" alt=""></a></div>--></td>
+                    <td style="text-align:right"></td>
                     </tr>
                 </table>
                 
@@ -269,7 +273,7 @@
 			</div>
 			
 			
-    </div><!--/page-->
+		 </div><!--/page-->
          
 <!--=====================market retailer Page Map View==================-->
 
@@ -312,31 +316,56 @@
 			
             <div data-role="content">
 				<div id="myerror" style="color:#C00"></div>
-				<!--<ul data-inset="true"  data-role="listview">
-					
-				</ul>-->
-				<div><b></b><span class="market" style="font-size:24px;color:#009191"></span></div>
-				<div><b></b><span class="visit_client" style="font-weight:bold;font-size:24px;color:#009191"></span></div>
+
+				<div><b></b><span class="market"></span></div>
+				<div><b></b><span class="visit_client" ></span></div>
 				
 				
 
-                 <a data-role="button"  class="ui-btn" style="text-align:center; " onClick="getOrder();" ><img src="order.png"></a>
+              <a data-role="button"  class="ui-btn" style="text-align:center; " onClick="getOrder();" ><img src="order.png"></a>
+                 <div id="order_total_show" style=" color:#009191; font-weight:bold"></div>
+              
 				
                 <input name="chemist_feedback" id="chemist_feedback" type="text" maxlength="100" placeholder="Note">
                 
                 
                 
                 <br/>
-				<a data-role="button" href="#page_confirm" data-icon="arrow-r" data-iconpos="right" >Next</a>
                 
+				<div id="errorChkVSubmit" style="color:#C00"></div>
+			<img src="" width="128" height="128" alt="" id="myImage" style="display:none">
+			<input name="lscPhoto" id="lscPhoto"   type="hidden">
+            
+			<input type="hidden" name="lat" id="lat" >
+			<input type="hidden" name="longitude" id="longitude" ><!--readonly-->
+            
+			<a data-role="button" id="btn_location" onClick="getLocationInfo();" >Confirm Location</a>            
+            
+			
+            
+			<br/>
+            <br/>
+            
+            <div id="checkLocation" style="color:#066"></div>
+			<div id="visit_submit">
+           <a data-role="button" id="btn_visit_submit" onClick="visitSubmit();" >Submit</a>
+            </div>
+            
+            
+			<div align="center"><img id="wait_image_visit_submit" style="" width="50px;" src="loading.gif" alt=""></div>
+            
+            
+				
+				
+				
+				
                 <br/><br/><br/><br/><br/><br/>
-                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-delete" onClick="cancelVisitPage();" >Cancel Voucher</button>
+
 				
                 <br/>
                 
             </div><!--/cont-->
 			
-			<!--<div data-theme="c" data-role="footer" data-position="fixed"></div>-->
 			
 			<!--panel-->	
 			
@@ -354,9 +383,8 @@
 				<div id="myerror" style="color:#C00">   </div>
 				<ul data-inset="true"  data-role="listview">
 					<li >
-						<!--<div><b>Visit Type & Date:</b><span class="visit_type"></span>&nbsp;,&nbsp;<span class="s_date"></span></div>	-->					
-						<div><b></b><span class="market" style="font-size:24px;color:#009191"></span></div>
-						<div><b></b><span class="visit_client" style="font-weight:bold;font-size:24px;color:#009191"></span></div>
+						<div><b></b><span class="market"></span></div>
+						<div><b></b><span class="visit_client" ></span></div>
 					</li>
 				</ul>
                 <ul data-inset="true"  data-role="listview" class="ui-nodisc-icon ui-alt-icon">
@@ -370,22 +398,20 @@
 					<div id="doc_gift"></div>
 					<!--</br></br>-->
                     <li style="border-bottom-style:solid; border-color:#CBE4E4;border-bottom-width:medium"><a data-role="button" class="ui-btn" style="text-align:center" onClick="getDoctorppm();" >PPM</a></li>
-					<!--</br>-->
 					
                     <div id="doc_ppm"></div>
 					
-                    <!--</br></br>-->
                     <li style="border-bottom-style:solid; border-color:#CBE4E4;border-bottom-width:medium" ><a data-role="button" class="ui-btn" style="text-align:center" onClick="getDoctorSample();" >Sample</a></li>
                    
-					<!--</br></br>-->
                     <div id="doc_sample"></div>
+                    
 					</br>
                 </ul>
 				
 				<table width="100%" border="0" cellpadding="0" cellspacing="0">
 					  <tr>
 						<td>Visited With</td>
-						<td width="30%"> <label><input type="radio" name="v_with" id="v_with" value="self"> Self</label></td>
+						<td width="30%"> <label><input type="radio" name="v_with" id="v_with" value="self" checked> Self</label></td>
 						<td width="30%"> <label><input type="radio" name="v_with" id="v_with"  value="supervisor">Supervisor</label></td>
 					  </tr>
 			  </table>
@@ -395,17 +421,32 @@
                 
                 <input type="text" name="doc_feedback"  maxlength="50"  id="doc_feedback" placeholder="Feedback/Note"  >
                 
-				<br/>
-				<a data-role="button" href="#page_confirm" data-icon="arrow-r" data-iconpos="right" >Next</a>
-                
-                <br/><br/><br/><br/><br/><br/>
-                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-delete" onClick="cancelVisitPage();" >Cancel</button>
 				
-                <br/>
+			            <br/>
+				 <div id="errorChkVSubmit_doc" style="color:#C00"></div>
+				<div id="checkLocation_doc" style="color:#066"></div>
+			
+
+			<a data-role="button" id="btn_location_doc" onClick="getLocationInfo();" >Confirm Location</a>            
+            
+			
+            
+           
+            
+			<div id="visit_submit_doc">
+            <a data-role="button" id="btn_visit_submit_doc" onClick="visitSubmit();" >Submit</a>
+            </div>
+            
+            <br/>
+            <br/>
+			<div align="center"><img id="wait_image_visit_submit_doc" style="" width="50px;" src="loading.gif" alt=""></div>
+				
+				
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                <br/><br/><br/><br/><br/><br/><br/>
                 
             </div><!--/cont-->
 			
-			<!--<div data-theme="c" data-role="footer" data-position="fixed"></div>-->
 			
 			<!--panel-->	
 			
@@ -418,14 +459,13 @@
 			
                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <!--<td align="left"><a data-role="button" href="#page_visit"  ><img src="back.png"></a></td>-->
                     <td width="70%">
 					<form class="ui-filterable">
 					<input type="text" data-iconpos="right" name="campaign_combo_id" id="campaign_combo_id" data-type="search"  >
 					</form>
 					
 					</td>
-                    <td width="10%px"><!--<a data-role="button" onClick="search_item_doctor_campaign();" style="height:15px" ><img src="search.png"></a>--></td>
+                    <td width="10%px"></td>
                     <td align="right"><a style="height:20px; width:27px" data-role="button" onClick="getDocCampaignData();" ><img src="done.png"></a>&nbsp;&nbsp;</td>
                   </tr>
                 </table>
@@ -548,7 +588,6 @@
 		<div data-theme="c" data-role="page" id="page_doctor_ppm">
             <div data-theme="c" data-role="header" data-position="fixed" data-tap-toggle="false">
 			
-               <!-- <h3>Order</h3>-->
                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                     <!--<td align="left"><a data-role="button" href="#page_visit"  ><img src="back.png"></a></td>-->
@@ -807,9 +846,9 @@
            
             
 			<a data-role="button" onClick="getLocationInfo();" >Confirm Location</a>
-			<div id="checkLocationProfileUpdate" style="color:#066;"></div>
+			
 			<br/><br/>		
-            	
+            <div id="checkLocationProfileUpdate" style="color:#066;"></div>	
 			<a data-role="button" id="btn_profile_update" onClick="lscProfileSubmit();" >Submit</a>            
             <div align="center"><img id="wait_image_profile_update" style="" width="50px;" src="loading.gif" alt=""></div>
 				
@@ -837,37 +876,6 @@
 		<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" ></div>
 	</div>
  
-<!--=====================market info Page==================-->
-		<div data-theme="c" data-role="page" id="market_info">
-            <div data-theme="c" data-role="header" data-position="fixed">
-			<!--<a  data-role="button" href="#pageHome" class="ui-btn-left ui-btn-icon-notext"><img src="menu.png"></a>-->
-            <a data-role="button" data-rel="back"  data-iconpos="left" class="ui-btn-right"><img src="back.png"></a>
-                <h3>Market Info</h3>
-            </div>
-			
-            <div data-role="content">
-				<div id="myerror" style="color:#C00"></div>               
-                 <ul data-inset="true"  data-role="listview">
-					<li>
-						<div><b>Visit Type & Date:</b><span class="visit_type"></span>&nbsp;&nbsp;<span class="s_date"></span></div>						
-						<div><b>Market :</b><span class="market"></span></div>
-                        <div><b>Distributor :</b><span class="visit_distributor"></span></div>
-                        <div><b>Chemist :</b><span class="visit_client" style="font-weight:bold"></span></div>
-					</li>					
-				</ul>
-                
-                 <!-- List view-------------------->		
-                <ul id="market_info_lv" data-role="listview" data-inset="true">
-                </ul>                
-                <!-- List ---->
-                
-				<br/>				
-				<a data-role="button" onClick="setMarketInfo();" >Done</a>
-            </div><!--/cont-->
-			
-			<div data-theme="c" data-role="footer" data-position="fixed">			
-			</div>			
-		 </div><!--/page-->
 
        
  
@@ -876,9 +884,7 @@
 		
 		<div data-theme="c" data-role="page" id="page_order" >
             <div data-theme="c" data-role="header" data-position="fixed" data-tap-toggle="false">
-			<!--<a  data-role="button" href="#pageHome" class="ui-btn-left ui-btn-icon-notext"><img src="menu.png"></a>-->
-            <!--<a data-role="button" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right">Back</a>-->
-               <!-- <h3>Order</h3>-->
+			
                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                     <!--<td align="left"><a data-role="button" href="#page_visit"  ><img src="back.png"></a></td>-->
@@ -892,15 +898,12 @@
                 </table>
             </div>
 			
-			
-	
-			
             <div data-role="content" style="overflow:scroll">
 				<div id="myerror" style="color:#C00"></div>
 
 				
-				<div><b></b><span class="market" style="font-size:24px;color:#009191"></span></div>
-				<div><b></b><span class="visit_client" style="font-weight:bold;font-size:24px;color:#009191"></span></div>
+				<div><b></b><span class="market"></span></div>
+				<div><b></b><span class="visit_client" ></span></div>
 				
 				
 				<div id="product_list_tbl">
@@ -909,7 +912,6 @@
 				
                 <br>
                 <br>
-			  
 			
             <br>                        
             <br>
@@ -949,20 +951,14 @@
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                     <td style=" color:#009191"> 
-                    <div><b></b><span class="market" style="font-size:24px;color:#009191"></span></div>
-				   <div><b></b><span class="visit_client" style="font-weight:bold;font-size:24px;color:#009191"></span></div>
+                    <div><b></b><span class="market"></span></div>
+				   <div><b></b><span class="visit_client" ></span></div>
                     </td>
                     <td width="30px"><a  onClick="OrderData();"  href="#page_order" ><img src="edit.png"></a></td>
                     <td>&nbsp;</td>
                   </tr>
               </table>
 				<div id="myerrorCart" style="color:#C00"></div>
-				
-
-				
-				
-			
-				
 				
                 <br>
                 <br>
@@ -978,18 +974,11 @@
 				
 				<div  style=" color:#009191; font-weight:bold">
 						<input type="hidden" name="payment_mode" id="payment_mode" value="CASH" >
-						
-				       
-				  
 			  </div>
 				
                 <br>
                 <br>
 
-			
-            
-            
-            
              <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
                <td><a data-role="button"  onClick="cancel_cart();"  ><img src="cancel.png"></a></td>
@@ -1017,12 +1006,8 @@
 			<br>
 			
             </div><!--/cont-->
-			
-			
 			<div data-theme="c" data-role="footer" data-position="fixed">
-			
 			</div>
-			
 		 </div><!--/page-->
 
  
@@ -1031,38 +1016,17 @@
 	<!-- ------------- Visit Confirm  page -------------------- -->
 	<div data-theme="c" data-role="page" id="page_confirm" >
 		<div data-theme="c" data-role="header" data-position="fixed" >
-			<!--<a data-role="button" href="#pageHome"  class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="menu.png"></a>-->
+			<a data-role="button" href="#pageHome"  class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="menu.png"></a>
 			<a data-role="button" data-rel="back"  data-iconpos="left" class="ui-btn-right" data-transition="slide"><img src="back.png"></a>
 			<h3>Confirm Visit</h3>
 	  </div>
 		<div data-role="content">
 		
-			 <div><b></b><span class="market" style="font-size:24px;color:#009191"></span></div>
-		    <div><b></b><span class="visit_client" style="font-weight:bold;font-size:24px;color:#009191"></span></div>
+			 <div><b></b><span class="market"></span></div>
+		    <div><b></b><span class="visit_client" ></span></div>
 			 <div id="product_total_last" style=" color:#009191; font-weight:bold"></div>
 		
-			<div id="errorChkVSubmit" style="color:#C00"></div>
-			
-			
-			
-			
-			<img src="" width="128" height="128" alt="" id="myImage" style="display:none">
-			<input name="lscPhoto" id="lscPhoto"   type="hidden">
-            
-			<input type="hidden" name="lat" id="lat" >
-			<input type="hidden" name="long" id="long" ><!--readonly-->
-            
-			<a data-role="button" onClick="getLocationInfo();" >Confirm Location</a>            
-            
-			<div id="checkLocation" style="color:#066"></div>
-            
-			<br/>
-            <br/>
-            
-			<a data-role="button" id="btn_visit_submit" onClick="visitSubmit();" >Submit</a>
-			<div align="center"><img id="wait_image_visit_submit" style="" width="50px;" src="loading.gif" alt=""></div>
-            
-            
+		
             
 		</div>
 		
@@ -1080,7 +1044,6 @@
 
             
 			<br/>
-			<!--<a data-role="button" href="#pageHome" >Home</a>-->
 			<a data-role="button" href="#page_market_ret" >Another</a>
 		</div>
 		
@@ -1148,26 +1111,20 @@
                     </select>                    
                     </td></tr>
                     
-                  <!-- <tr><td>Complain From</td><td>
-                    <select name="complain_from_id" id="complain_from_id" data-native-menu="false">                        
-                    </select>
-                    </td></tr>-->
                     
                     <tr><td>Feedback</td><td>
                     <textarea name="complain_ref" id="complain_ref" value="" ></textarea>
-                   <!-- <input type="text" name="complain_ref" id="complain_ref"  value="">-->
                    </td></tr>
                     
                     <tr><td></td><td><input type="hidden" name="complain_details" id="complain_details"  value="">
-                    <!--<textarea name="complain_details" id="complain_details" value=""></textarea>--></td></tr>
+                    </td></tr>
                     
                 </table>
                 
                 <a data-role="button" id="btn_complain_submit" onClick="complainSubmit();" >Submit</a>            
             	<div align="center"><img id="wait_image_complain_submit" style="" width="50px;" src="loading.gif" alt=""></div>
 				
-                <br/>
-                <br/><br/><br/><br/><br/><br/>
+                <br/><br/><br/><br/><br/><br/><br/>
                 
             </div><!--/cont-->
 			
@@ -1264,7 +1221,7 @@
                 <br>
                 <div align="center"><img id="wait_image_visit_report" width="50px;" src="loading.gif" alt=""></div>
 				
-                <!--<table style="width:100%" border="1" bordercolor="#DDF0E3" cellpadding="1px" cellspacing="1" id="tbl_visit_rpt_show" ></table>-->
+
                 
                 <table id="tbl_visit_rpt_show_campaign"  border="1" class="ui-body-d ui-shadow table-stripe ui-responsive" data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px; width:100%; border-bottom:solid; border-bottom-color:#999"></table>
                 
@@ -1299,9 +1256,6 @@
 				<div id="myerror" style="color:#C00"></div>               
                               
 
-
-				<!--<a data-role="button" href="#page_reports_order">Order</a>-->
-				<!--<a data-role="button" href="#page_reports_dcr" >DCR</a>-->
 				
             </div><!--/cont-->
 			
@@ -1328,17 +1282,6 @@
 			
 				<div id="myerror" style="color:#C00"></div>               
                               
-				
-
-				
-				
-				
-				
-				
-				
-				
-				
-				
 				
 
 <table width="100%" border="0">
@@ -1397,9 +1340,6 @@
 			
 				<div id="myerror" style="color:#C00"></div>               
                               
-				
-
-				
 					<div id="report"> </div>
 					
 					<table width="100%" border="0">
@@ -1415,27 +1355,15 @@
 					  </tr>
 					</table>
 
-				 
-				 
-				
-				
 				<br/>
 				<div id="doctor_report_button"> </div>
-				
-				
-				
 				</br></br>
 				
 				<div id="order_report_button"> </div>
             </div><!--/cont-->
 			
-			
-			
-			
 			<div data-theme="c" data-role="footer" data-position="fixed">
-			
 			</div>
-			
 		 </div><!--/page-->
 
 <!--==================page_report==================================-->
@@ -1450,7 +1378,6 @@
             <div data-role="content">			
 				<div id="myerror_s_report" style="color:#C00"></div>               
 				<ul data-inset="true" data-role="listview">
-					<!--<li style="background-color:#F2F2F2;"></li>-->
 					<li>
 						
 						<table width="100%" border="0" cellpadding="0" cellspacing="0">
