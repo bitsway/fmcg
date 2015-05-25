@@ -607,7 +607,7 @@ localStorage.report_button='<a data-role="button" onClick="s_order_summary_repor
 													
 													
 													
-													var product_tbl_order='<ul id="item_combo_id_lv" data-role="listview" data-filter="true" data-input="#item_combo_id" data-inset="true" data-filter-reveal="true">'
+													var product_tbl_order='<ul id="item_combo_id_lv" data-role="listview" data-filter="true" data-input="#item_combo_id" data-inset="true" >'
 													
 													for (var j=0; j < productLength; j++){
 														var productArray2 = productList[j].split('<fd>');
