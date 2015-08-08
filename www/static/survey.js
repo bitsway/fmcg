@@ -326,7 +326,7 @@ function check_user() {
 	//Main
 
 	
-	//var  apipath_base_photo_dm='http://127.0.0.1:8000/mrepbiopharma/syncmobile_ofline_ppm_report_test_live_20150502/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+//	var  apipath_base_photo_dm='http://127.0.0.1:8000/mrepgh/syncmobile_order_to_delivery_gh/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	
 //	var apipath_base_photo_dm='http://e2.businesssolutionapps.com/mrepbiopharma/syncmobile_ofline_ppm_report_test/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
   var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_20150502/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
@@ -5467,6 +5467,7 @@ function s_order_detail_report() {
 	$("#date_t").html("");
 	
 	
+	$("#myerror_s_report").html("");
 	
 	// Blank all div
 	$("#sales_call").html("");
