@@ -103,7 +103,7 @@
                 <br><br><br><br><br><br><br><br><br><br>
                 
                 <br><br><br><br><br><br>
-                <div  style="color:#CCCCCC"    align="right">V-3.0 B-150708</div>    
+                <div  style="color:#CCCCCC"    align="right">build20150504b</div>    
             </div>
 			
         <!-- ==========footer====== -->	
@@ -151,31 +151,12 @@
 		 </div><!--/page-->
 
          
-         
-         
-   <!-- ------------- Visit Success -------------------- -->
-	<div data-theme="c" data-role="page" id="page_confirm_visit_success" >
-		<div data-theme="c" data-role="header" data-position="fixed" >
-		<a data-role="button" href="#pageHome"  class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " onClick="clear_mgs()"><img src="menu.png"></a>
-			<h3>Success</h3>
-	  </div>
-		<div data-role="content" align="center">
-        	<div id="visit_success" style="background-image:url(result_back.png); background-repeat:no-repea; width:300px; height:200px; color:#FFF; font-size:20px;"   align="center"></br></br></br>Submitted Successfully</div>
-
-            
-			<br/>
-			<a data-role="button" href="#page_market_ret" >Another</a>
-		</div>
-		
-		<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" ></div>
-	</div>      
-         
 <!--=====================Unschedule: market retailer Page==================-->
 		<div data-theme="c" data-role="page" id="page_market_ret">
             <div data-theme="c" data-role="header" data-position="fixed">
 			<a  data-role="button" href="#pageHome" class="ui-btn-left ui-btn-icon-notext" onClick="clear_mgs()"><img src="menu.png"></a>
             <a data-role="button" data-rel="back"  data-iconpos="left" class="ui-btn-right"><img src="back.png"></a>
-                <h3><div id="d_visit"> Outlet</div></h3>
+                <h3><div id="d_visit"> Chemist</div></h3>
             </div>
 			
             <div data-role="content" style="margin-top:0px; padding-top:0px;">            	
@@ -325,7 +306,70 @@
          
 <!--         ===================map page end===================-->
 
+<!--=====================market visit Page==================-->
+		<div data-theme="c" data-role="page" id="page_visit">
+            <div data-theme="c" data-role="header" data-position="fixed">
+			<a  data-role="button" href="#pageHome" class="ui-btn-left ui-btn-icon-notext" onClick="clear_mgs()"><img src="menu.png"></a>
+            <a data-role="button" data-rel="back"  data-iconpos="left" class="ui-btn-right"><img src="back.png"></a>
+                <h3>Outlet visit</h3>
+            </div>
+			
+            <div data-role="content">
+				<div id="myerror" style="color:#C00"></div>
 
+				<div><b></b><span class="market"></span></div>
+				<div><b></b><span class="visit_client" ></span></div>
+				
+				
+
+              <a data-role="button"  class="ui-btn" style="text-align:center; " onClick="getOrder();" ><img src="order.png"></a>
+                 <div id="order_total_show" style=" color:#009191; font-weight:bold"></div>
+              
+				
+                <input name="chemist_feedback" id="chemist_feedback" type="text" maxlength="100" placeholder="Note">
+                
+                
+                
+                <br/>
+                
+				<div id="errorChkVSubmit" style="color:#C00"></div>
+			<img src="" width="128" height="128" alt="" id="myImage" style="display:none">
+			<input name="lscPhoto" id="lscPhoto"   type="hidden">
+            
+			<input type="hidden" name="lat" id="lat" >
+			<input type="hidden" name="longitude" id="longitude" ><!--readonly-->
+            
+			<a data-role="button" id="btn_location" onClick="getLocationInfo();" >Confirm Location</a>            
+            
+			
+            
+			<br/>
+            <br/>
+            
+            <div id="checkLocation" style="color:#066"></div>
+			<div id="visit_submit">
+           <a data-role="button" id="btn_visit_submit" onClick="visitSubmit();" >Submit</a>
+            </div>
+            
+            
+			<div align="center"><img id="wait_image_visit_submit" style="" width="50px;" src="loading.gif" alt=""></div>
+            
+            
+				
+				
+				
+				
+                <br/><br/><br/><br/><br/><br/>
+
+				
+                <br/>
+                
+            </div><!--/cont-->
+			
+			
+			<!--panel-->	
+			
+		 </div><!--/page-->
 <!--=================Doctor===========================-->
 <!--=====================market visit Page Doctor==================-->
 		<div data-theme="c" data-role="page" id="page_visit_doc">
@@ -929,7 +973,7 @@
                 <div id="product_total_cart" style=" color:#009191; font-weight:bold"></div>
 				
 				<div  style=" color:#009191; font-weight:bold">
-						<!--<input type="hidden" name="payment_mode" id="payment_mode" value="CASH" >-->
+						<input type="hidden" name="payment_mode" id="payment_mode" value="CASH" >
 			  </div>
 				
                 <br>
@@ -989,7 +1033,22 @@
 		<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" ></div>
 	</div>
 	
-    
+    <!-- ------------- Visit Success -------------------- -->
+	<div data-theme="c" data-role="page" id="page_confirm_visit_success" >
+		<div data-theme="c" data-role="header" data-position="fixed" >
+		<a data-role="button" href="#pageHome"  class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " onClick="clear_mgs()"><img src="menu.png"></a>
+			<h3>Success</h3>
+	  </div>
+		<div data-role="content" align="center">
+        	<div id="visit_success" style="background-image:url(result_back.png); background-repeat:no-repea; width:300px; height:200px; color:#FFF; font-size:20px;"  id="visit_result" align="center"></br></br></br>Submitted Successfully</div>
+
+            
+			<br/>
+			<a data-role="button" href="#page_market_ret" >Another</a>
+		</div>
+		
+		<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" ></div>
+	</div>
 
 
 
@@ -1449,159 +1508,6 @@
 
 <!-- ===================== today status Page================== -->
 		<!--/page-->
-        
-        
-    <!-- ========================Visit Save Start=================-->   
-        
-    
-		<div data-theme="c" data-role="page" id="page_saved_visit">
-            <div data-theme="c" data-role="header" data-position="fixed">
-			<a  data-role="button" href="#pageHome" class="ui-btn-left ui-btn-icon-notext" onClick="clear_mgs()"><img src="menu.png"></a>
-            <a data-role="button" data-rel="back"  data-iconpos="left" class="ui-btn-right"><img src="back.png"></a>
-                <h3><div id="d_visit"> Saved Visit</div></h3>
-            </div>
-			
-            <div data-role="content" style="margin-top:0px; padding-top:0px;">            	
-            	<div id="v_path" ><font style="font-weight:bold; font-size:13px; color:#666">Saved Visit</font></div><br>
-				
-			
-				<div id="err_save_visit" style="color:#C00"></div>
-                
-
-				<br/>
-                
-				
-                			
-               
-                <ul id="saved_visit" data-role="listview"  >
-                </ul>
-                
-				
-                
-                <br>
-				<br>
-            </div><!--/cont-->
-			
-			<div data-theme="c" data-role="footer" data-position="fixed">
-			
-			</div>
-		 </div><!--/page-->
-			
-<!--=====================market visit Page==================-->
-		<div data-theme="c" data-role="page" id="page_visit">
-            <div data-theme="c" data-role="header" data-position="fixed">
-			<a  data-role="button" href="#pageHome" class="ui-btn-left ui-btn-icon-notext" onClick="clear_mgs()"><img src="menu.png"></a>
-            <a data-role="button" data-rel="back"  data-iconpos="left" class="ui-btn-right"><img src="back.png"></a>
-                <h3>Outlet visit</h3>
-            </div>
-			
-            <div data-role="content">
-				<div id="myerror" style="color:#C00"></div>
-
-				<div><b></b><span class="market"></span></div>
-				<div><b></b><span class="visit_client" ></span></div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-              <a data-role="button"  class="ui-btn" style="text-align:center; " onClick="getOrder();" ><img src="order.png"></a>
-                 <div id="order_total_show" style=" color:#009191; font-weight:bold"></div>
-              
-				
-                <input name="chemist_feedback" id="chemist_feedback" type="text" maxlength="100" placeholder="Note">
-                
-                
-                
-                <br/>
-                <div id="errorChkVSubmit_1" style="color:#C00"></div>
-				<div id="errorChkVSubmit" style="color:#C00"></div>
-			<img src="" width="128" height="128" alt="" id="myImage" style="display:none">
-			<input name="lscPhoto" id="lscPhoto"   type="hidden">
-
-
-			
-			<div id="delivery_date_div">
-                <span style=" color:#009191; ">Delivery Date</span>
-				<input name="delivery_date" id="delivery_date" placeholder="Date" value="" type="date" placeholder="Delivery Date">
-			</div>
-            
-			<div id="payment_date_div">
-            	<span style=" color:#009191; ">Payment Date</span>
-				<input name="payment_date" id="payment_date" placeholder="Date" value="" type="date" placeholder="Payment Date">
-			</div>
-			
-            
-            
-			<div id="payment_mode_div">
-            
-			<table width="100%" border="0" cellpadding="0" cellspacing="0">
-					  <tr>
-						<td>Payment Mode</td>
-						<td width="30%"> <label><input type="radio" name="paymentMode" id="paymentMode" value="Cash" checked>Cash</label></td>
-						<td width="30%"> <label><input type="radio" name="paymentMode" id="paymentMode"  value="Credit">Credit</label></td>
-					  </tr>
-			  </table>
-			</div>
-
-			<br/>
-            <br/>
-
-			<input type="hidden" name="lat" id="lat" >
-			<input type="hidden" name="longitude" id="longitude" ><!--readonly-->
-            
-			<div id="visit_location">
-			<a data-role="button" id="btn_location" onClick="getLocationInfo();" >Confirm Location</a>            
-            </div>
-			<br/>
-            <br/>
-            
-            <div id="checkLocation" style="color:#066"></div>
-            
-            
-           
-			<div id="visit_submit">
-           <a data-role="button" id="btn_visit_submit" onClick="visitSubmit();" >Submit</a>
-            </div>
-            
-            
-            
-            <br/>
-            <br/><br/>
-            <br/>
-            
-             
-            
-			<div align="center"><img id="wait_image_visit_submit" style="" width="50px;" src="loading.gif" alt=""></div>
-            
-            
-				
-				
-				
-				
-                <br/><br/><br/><br/><br/><br/>
-
-				
-                <br/>
-                
-            </div><!--/cont-->
-			
-			
-			<!--panel-->	
-            
-            <div data-theme="c" data-role="footer" data-position="fixed">
-            
-            &nbsp; <a data-role="button" id="btn_visit_save" onClick="visitSave();" >Save</a>
-            </div>
-			</div>
-		 </div><!--/page-->
-    <!--========================Visit page rnd====================-->
-        
-        
 
     <script type="text/javascript" src="phonegap.js"></script>
     
